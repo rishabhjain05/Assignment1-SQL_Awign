@@ -1,0 +1,32 @@
+# Q1. Select the detail of the employee whose name starts with P.
+# Sol:- Select * from Employee where EmpName=’P%’;
+
+# Q2. How many permanent candidates take a salary more than 5000.
+# Sol:- Select count(IsPermanent) from EmpSalary where IsPermanent=’Yes’ and Salary>5000;
+
+# Q3. Select the detail of the employee whose emailId is in gmail.
+# Sol:- Select * from Employee where EmailId=’%gmail%’;
+
+# Q4. Select the details of the employee who works either for department E-104 or E-102.
+# Sol:- Select * from EmpDept where DeptId=’E-102’ or DeptId=’E-104’;
+
+# Q5.  What is the department name for DeptID E-102?
+# Sol:- Select DeptId, DeptName from EmpDept where DeptId=’E-102’;
+
+# Q6. What is the total salary that is paid to permanent employees?
+# Sol:- select SUM(DISTINCT Salary) AS "Total Salary" from EmpSalary where IsPermanent=’Yes’;
+
+# Q7. List name of all employees whose name ends with a.
+# Sol:- Select EmpName from Employee where EmpName like ‘%a’;
+
+# Q8. List the number of departments of employees.
+# Sol:- Select count(Department) from Employee
+
+# Q9. How many projects started in 2010.
+# Sol:- Select count(ProjectId) from EmpProject where StartYear=2010;
+
+# Q10. How many projects started and finished in the same year.
+# Sol:- Select count(ProjectId) from EmpProject where StartYear=EndYear;
+
+# Q11. select the name of the employee whose name's 3rd character is 'h'.
+# Sol:- Select EmpName from Employee where EmpName like ‘__h’;

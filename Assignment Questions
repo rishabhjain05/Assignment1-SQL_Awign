@@ -30,3 +30,29 @@
 
 # Q11. select the name of the employee whose name's 3rd character is 'h'.
 # Sol:- Select EmpName from Employee where EmpName like ‘__h’;
+
+####################################################################################
+
+# Q1. Select the department name of the company which is assigned to the employee whose employee id is grater 103.
+# Sol. Select deptname from empdept where deptid in (select department from employee where empid>103)
+
+# Q2. Select the name of the employee who is working under Abhishek.
+# Sol. Select empname from employee where empheadid =(select empid from employee where empname='abhishek')
+
+# Q3. Select the name of the employee who is department head of HR.
+# Sol. Select empname from employee where empid =(select depthead from empdept where deptname='hr')
+
+# Q4. Select the name of the employee head who is permanent.
+# Sol. Select empname from employee where empid in(select empheadid from employee) and empid in(select empid from empsalary where ispermanent='yes')
+
+# Q5. Select the name and email of the Dept Head who is not Permanent.
+# Sol. Select empname, emaildid from employee where empid in(select depthead from empdept ) and empid in(select empid from empsalary where ispermanent='no')
+
+# Q6. Select the employee whose department off is monday
+# Sol. Select * from employee where department in(select deptid from empdept where dept_off='monday')
+
+# Q7. Select the indian clinets details.
+# Sol. Select * from clienttable where cid in(select cid from country where cname='india')
+
+# Q8. Select the details of all employee working in development department.
+# Sol. Select * from employee where department in(select deptid from empdept where deptname='development')
